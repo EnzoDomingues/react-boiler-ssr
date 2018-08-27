@@ -45,10 +45,10 @@ app.get( "/*", ( req, res ) => {
 } );
 
 const host = "0.0.0.0";
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-app.listen( port, host, () => {
-    console.log( "Server started......." );
+app.listen( PORT, host, () => {
+    console.log( `Our app is running on port ${ PORT }` );
 } );
 
 function htmlTemplate( reactDom, reduxState, helmetData ) {
