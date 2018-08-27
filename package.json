@@ -7,7 +7,7 @@
     "build": "NODE_ENV=production webpack --progress",
     "dev": "npm-run-all --parallel server client",
     "postinstall": "npm run build",
-    "start": "node server.js",
+    "start": "node ./src/server/server.js",
     "server": "nodemon index.js",
     "client": "webpack --watch --progress",
     "linter": "eslint src",
