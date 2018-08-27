@@ -1,18 +1,18 @@
-import express from "express";
-import path from "path";
+const Express = require( "express" );
+const path = require( "path" );
 
-import React from "react";
-import { renderToString } from "react-dom/server";
-import { StaticRouter, matchPath } from "react-router-dom";
-import { Provider as ReduxProvider } from "react-redux";
-import Helmet from "react-helmet";
-import routes from "../constant/routes";
-import Layout from "../layout/Layout";
-import createStore, { initializeSession } from "../store";
+const React = require( "react" );
+const { renderToString } = require( "react-dom/server" );
+const { StaticRouter, matchPath } = require( "react-router-dom" );
+const { ReduxProvider } = require( "react-redux" );
+const Helmet = require( "react-helmet" );
+const routes = require( "../constant/routes" );
+const Layout = require( "../layout/Layout" );
+const { createStore, initializeSession } = require( "../store.js" );
 
-const app = express();
+const app = Express();
 
-app.use( express.static( path.resolve( __dirname, "../../dist" ) ) );
+app.use( Express.static( path.resolve( __dirname, "../../dist" ) ) );
 
 app.get( "/*", ( req, res ) => {
     const context = { };
