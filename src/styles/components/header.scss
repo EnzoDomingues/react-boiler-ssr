@@ -1,0 +1,49 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: color('black');
+
+  // @include sprite-retina();
+}
+
+.header-nav {
+  &__btn {
+    border-bottom: 1px solid transparent;
+    color: color('black');
+
+    &.active {
+      border-color: color('black');
+    }
+  }
+}
+
+@include min-screen(mq('laptop')) {
+  .header {
+    position: relative;
+    border-bottom: 1px solid color('black');
+    margin-bottom: 40px;
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+    }
+  }
+
+  .header-nav {
+    width: 100%;
+
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      &__item {
+        margin-left: 20px;
+      }
+    }
+  }
+}
